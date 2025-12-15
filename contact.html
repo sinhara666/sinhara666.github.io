@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | Auto Bonds Blessings</title>
+  <style>
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111}
+    header,footer{background:#1f2a35;color:#fff;padding:18px 16px}
+    .brand{font-size:22px;font-weight:700;text-align:center}
+    .nav{display:flex;gap:18px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+    .nav a{color:#fff;text-decoration:none;opacity:.9}
+    .nav a:hover{opacity:1;text-decoration:underline}
+    main{max-width:900px;margin:0 auto;padding:42px 16px}
+    .card{background:#fff;border:1px solid #e6e8ec;border-radius:10px;padding:18px;border-radius:10px}
+    label{display:block;font-weight:700;margin:12px 0 6px}
+    input,textarea{width:100%;padding:10px;border:1px solid #cfd6de;border-radius:8px}
+    button{margin-top:12px;padding:10px 14px;border:0;border-radius:8px;background:#2b7bbb;color:#fff;cursor:pointer}
+    button:hover{filter:brightness(0.95)}
+    .muted{color:#555}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Auto Bonds Blessings</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact</h1>
+    <p class="muted">This form is a placeholder. For a real form, you’ll need a form service or backend.</p>
+
+    <div class="card">
+      <form onsubmit="event.preventDefault(); alert('Form placeholder — connect a form service to receive messages.');">
+        <label>Name</label>
+        <input type="text" required />
+
+        <label>Email</label>
+        <input type="email" required />
+
+        <label>Message</label>
+        <textarea rows="6" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+
+      <p class="muted" style="margin-top:14px;">
+        Or email: <strong>your@email.com</strong>
+      </p>
+    </div>
+  </main>
+
+  <footer style="text-align:center">
+    © 2025 Auto Bonds Blessings
+  </footer>
+</body>
+</html>
