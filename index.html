@@ -1,220 +1,531 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Bonds Blessings</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-
-        body {
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2rem;
-        }
-
-        nav {
-            margin-top: 0.5rem;
-        }
-
-        nav a {
-            color: #ecf0f1;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        main h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        main p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        main .btn {
-            background-color: #3498db;
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        main .btn:hover {
-            background-color: #2980b9;
-        }
-
-        footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        footer a {
-            color: #ecf0f1;
-            margin: 0 0.5rem;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Auto Bonds Blessings</h1>
-   <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Donate | Auto Bonds Blessings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auto Bonds Blessings</title>
+  <meta name="description" content="Auto Bonds Blessings helps individuals whose vehicles have been impounded by providing emergency fuel and food assistance—so one setback doesn’t turn into a life-altering crisis." />
+
   <style>
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111}
-    header,footer{background:#1f2a35;color:#fff;padding:18px 16px}
-    .brand{font-size:22px;font-weight:700;text-align:center}
-    .nav{display:flex;gap:18px;justify-content:center;margin-top:10px;flex-wrap:wrap}
-    .nav a{color:#fff;text-decoration:none;opacity:.9}
-    .nav a:hover{opacity:1;text-decoration:underline}
-    main{max-width:980px;margin:0 auto;padding:42px 16px}
-    .card{background:#fff;border:1px solid #e6e8ec;border-radius:10px;padding:18px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-    .muted{color:#555}
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;background:#2b7bbb;color:#fff}
-    .btn:hover{filter:brightness(.95)}
-    .btn2{background:#1f2a35}
-    ul{margin:8px 0 0 18px}
+    /* =========
+       THEME (change these 6 lines if you want a different vibe)
+       ========= */
+    :root{
+      --bg: #f6f7fb;         /* page background */
+      --surface: #ffffff;     /* cards/sections */
+      --text: #121826;        /* main text */
+      --muted: #4b5563;       /* secondary text */
+      --border: #e5e7eb;      /* lines */
+      --accent: #d97706;      /* warm accent (amber) */
+      --accent2: #2563eb;     /* trust accent (blue) */
+      --shadow: 0 10px 30px rgba(17, 24, 39, .08);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:focus, button:focus{ outline: 3px solid rgba(37,99,235,.35); outline-offset: 2px; border-radius: 12px; }
+
+    /* Layout */
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+    .section{ padding: 64px 0; }
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* Top bar / nav */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246,247,251,.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    .mark{
+      width: 34px; height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 8px 22px rgba(37,99,235,.18);
+    }
+    nav ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a{
+      color: var(--muted);
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 12px;
+    }
+    nav a:hover{ background: rgba(17,24,39,.06); color: var(--text); }
+
+    .nav-cta{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+    }
+
+    /* Buttons */
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      font-weight: 700;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform .05s ease, background .2s ease, border-color .2s ease, color .2s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .btn-primary{
+      background: var(--text);
+      color: #fff;
+    }
+    .btn-primary:hover{ background: #0b1220; }
+    .btn-accent{
+      background: var(--accent2);
+      color: #fff;
+    }
+    .btn-accent:hover{ background: #1d4ed8; }
+    .btn-ghost{
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .btn-ghost:hover{ background: rgba(17,24,39,.04); }
+
+    /* Hero */
+    .hero{
+      padding: 56px 0 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .hero-main{
+      padding: 34px;
+      overflow:hidden;
+      position: relative;
+    }
+    .hero-main:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(650px 250px at 20% 20%, rgba(217,119,6,.18), transparent 60%),
+        radial-gradient(650px 250px at 80% 10%, rgba(37,99,235,.16), transparent 55%);
+      pointer-events:none;
+    }
+    .hero-main > *{ position: relative; }
+    .kicker{
+      display:inline-flex;
+      gap: 10px;
+      align-items:center;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,.7);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+      width: fit-content;
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+      letter-spacing: -0.6px;
+    }
+    .lead{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 60ch;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .mini{
+      padding: 22px;
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .mini h3{ margin:0; font-size: 16px; }
+    .mini p{ margin: 6px 0 0; color: var(--muted); font-size: 14.5px; }
+    .pill-row{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .dot{
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(217,119,6,.18);
+    }
+    .dot.blue{
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(37,99,235,.14);
+    }
+
+    /* Content blocks */
+    h2{
+      margin:0 0 10px;
+      font-size: clamp(22px, 2.4vw, 30px);
+      letter-spacing: -0.3px;
+    }
+    .sub{
+      margin:0 0 22px;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .feature{
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(17,24,39,.06);
+      min-height: 150px;
+    }
+    .feature h3{ margin: 0 0 8px; font-size: 16px; }
+    .feature p{ margin: 0; color: var(--muted); }
+    .feature .icon{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.9);
+    }
+    .icon.orange{ box-shadow: 0 10px 18px rgba(217,119,6,.12); }
+    .icon.blue{ box-shadow: 0 10px 18px rgba(37,99,235,.10); }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .panel{ padding: 26px; }
+    .panel ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+    .panel li{ margin: 8px 0; }
+    .callout{
+      padding: 26px;
+      border: 1px solid rgba(217,119,6,.25);
+      background: rgba(217,119,6,.08);
+    }
+
+    /* Footer */
+    footer{
+      border-top: 1px solid var(--border);
+      padding: 34px 0;
+      color: var(--muted);
+    }
+    .footer-row{
+      display:flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .social{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+    }
+    .social a{
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border: 1px solid var(--border);
+      background: #fff;
+      transition: transform .05s ease, background .2s ease;
+    }
+    .social a:hover{ background: rgba(17,24,39,.04); }
+    .social a:active{ transform: translateY(1px); }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+      nav ul{ display:none; } /* keep it simple; can add hamburger later */
+    }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="brand">Auto Bonds Blessings</div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="application.html">Apply</a>
-      <a href="donate.html">Donate</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <span class="mark" aria-hidden="true"></span>
+          <span>Auto Bonds Blessings</span>
+        </div>
+
+        <nav aria-label="Primary navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#mission">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#apply">Apply</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn btn-ghost" href="#apply">Apply</a>
+          <a class="btn btn-accent" href="#donate">Donate</a>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <h1>Donate</h1>
-    <p class="muted">Auto Bonds Blessings exists to prevent a single setback from becoming a life-altering crisis.
+  <!-- HERO / HOME -->
+  <main id="home" class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="kicker">Direct help • Right on time</div>
+          <h1>Losing a car shouldn’t cost someone their job — or their home.</h1>
+          <p class="lead">
+            Auto Bonds Blessings supports individuals whose vehicles have been impounded by providing emergency fuel and food
+            assistance during a critical moment — so one setback doesn’t turn into a life-altering crisis.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#apply">Apply for Assistance</a>
+            <a class="btn btn-ghost" href="#donate">Donate</a>
+          </div>
 
-We recognize that losing access to a vehicle can have devastating consequences. For many people, a car is not a luxury — it is a lifeline. When a vehicle is impounded, individuals often face missed work, job loss, and an increased risk of housing instability or homelessness.
+          <div class="pill-row" aria-label="Key focus areas">
+            <span class="pill"><span class="dot"></span> Fuel support</span>
+            <span class="pill"><span class="dot blue"></span> Food assistance</span>
+            <span class="pill"><span class="dot"></span> Crisis prevention</span>
+          </div>
+        </div>
 
-Our mission is simple and practical:
-we provide targeted support to individuals whose vehicles have been impounded by offering fuel cards and food assistance to help them stay employed and regain stability.
-
-We focus on the critical window after a vehicle loss — when people are most vulnerable and small, timely support can prevent long-term harm. By addressing immediate needs, we help individuals maintain employment, reduce financial strain, and begin rebuilding independence.
-
-Across communities, vehicle impoundments are increasing, placing additional pressure on families already navigating economic hardship. The loss of transportation doesn’t just limit mobility — it disrupts income, housing security, and overall well-being. Auto Bonds Blessings responds to this growing need with a solution rooted in dignity, respect, and practical assistance.
-
-Our work is not about charity for charity’s sake. It is about intervention at the right moment, strengthening resilience, and supporting people before crisis turns into collapse.
-
-We are currently seeking funding to launch and expand our programs so we can serve individuals when they need it most. With community support, Auto Bonds Blessings will help turn moments of hardship into opportunities for recovery and stability.
-
-Together, we can help people keep their footing, protect their livelihoods, and move forward with hope.
-
-📩 Contact us to learn more about our mission or to support.</p>
-
-    <div class="grid">
-      <div class="card">
-        <h2>One-time Donation</h2>
-        <p class="muted">Fast and simple.</p>
-        <a class="btn" href="https://YOUR-DONATION-LINK" target="_blank" rel="noopener">Donate Once</a>
+        <aside class="card mini">
+          <div>
+            <h3>What we do (in plain words)</h3>
+            <p>
+              We step in fast after vehicle impoundment so people can keep showing up to work and stay stable while they rebuild.
+            </p>
+          </div>
+          <div class="callout card" style="box-shadow:none;">
+            <h3 style="margin:0 0 6px;">Need help now?</h3>
+            <p style="margin:0 0 14px; color: var(--muted);">
+              If your vehicle was impounded and you need short-term support, start an application.
+            </p>
+            <a class="btn btn-accent" href="#apply">Start Application</a>
+          </div>
+        </aside>
       </div>
+    </section>
 
-      <div class="card">
-        <h2>Monthly Support</h2>
-        <p class="muted">Keeps the mission stable.</p>
-        <a class="btn btn2" href="https://YOUR-MONTHLY-LINK" target="_blank" rel="noopener">Donate Monthly</a>
-      </div>
-
-      <div class="card">
-        <h2>Other Ways to Give</h2>
-        <p class="muted">Contact us if you want to sponsor a family or contribute services.</p>
-        <a class="btn" href="contact.html">Contact Us</a>
-      </div>
-    </div>
-
-    <div class="card" style="margin-top:14px">
-      <h2>Where your donation goes</h2>
-      <ul>
-        <li>Application support and outreach</li>
-        <li>Resource navigation and follow-up</li>
-        <li>Operations and communication costs</li>
-      </ul>
-      <p class="muted" style="margin-top:10px">
-        Transparency matters. If you want a public impact report page, tell me and I’ll add one.
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <h2>Support at the moment it matters most</h2>
+      <p class="sub">
+        When a vehicle is impounded, the consequences can hit within days. We focus on timely, practical support that helps prevent
+        job loss and housing instability.
       </p>
-    </div>
+
+      <div class="grid3">
+        <div class="feature">
+          <div class="icon orange">⛽</div>
+          <h3>Emergency fuel cards</h3>
+          <p>Helps people keep getting to work, interviews, and required appointments.</p>
+        </div>
+        <div class="feature">
+          <div class="icon blue">🥫</div>
+          <h3>Food assistance</h3>
+          <p>Reduces immediate strain so people can focus on getting stable again.</p>
+        </div>
+        <div class="feature">
+          <div class="icon orange">🛡️</div>
+          <h3>Crisis prevention</h3>
+          <p>Short-term support designed to stop a temporary setback from turning into collapse.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / MISSION -->
+    <section id="mission" class="section">
+      <div class="split">
+        <div class="card panel">
+          <h2>Why this matters</h2>
+          <p class="sub" style="margin-bottom:0;">
+            Transportation loss doesn’t just limit mobility — it disrupts income, housing security, and well-being.
+            For many people, a car is a lifeline, not a luxury.
+          </p>
+          <ul>
+            <li>Missed shifts → lost income</li>
+            <li>Lost income → housing instability</li>
+            <li>Housing instability → long-term crisis</li>
+          </ul>
+        </div>
+
+        <div class="card panel callout">
+          <h2>Our approach</h2>
+          <p class="sub" style="margin-bottom:0;">
+            Help without judgment. Support with dignity. Practical assistance delivered at the right time.
+          </p>
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="#donate">Support the mission</a>
+            <a class="btn btn-ghost" href="#contact">Partner or ask questions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLY -->
+    <section id="apply" class="section">
+      <div class="card panel">
+        <h2>Apply for assistance</h2>
+        <p class="sub">
+          If your vehicle was impounded and you need short-term fuel/food support to stay employed, you can apply here.
+          (Replace the button link with your actual form link.)
+        </p>
+        <a class="btn btn-accent" href="YOUR_APPLICATION_FORM_LINK_HERE">Go to Application Form</a>
+        <p style="margin-top:12px; color: var(--muted); font-size: 14px;">
+          Tip: Use a Google Form, Jotform, or Typeform link here.
+        </p>
+      </div>
+    </section>
+
+    <!-- DONATE -->
+    <section id="donate" class="section">
+      <div class="card panel">
+        <h2>Donate</h2>
+        <p class="sub">
+          Small, timely support can help prevent job loss and housing instability after vehicle impoundment.
+          Choose what works for you.
+        </p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="YOUR_DONATE_ONCE_LINK_HERE">Donate Once</a>
+          <a class="btn btn-ghost" href="YOUR_DONATE_MONTHLY_LINK_HERE">Donate Monthly</a>
+        </div>
+        <p style="margin-top:14px; color: var(--muted); font-size: 14px;">
+          Add a short note here later like “We respect privacy and never sell donor info.”
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" style="padding-bottom: 30px;">
+      <div class="card panel">
+        <h2>Contact</h2>
+        <p class="sub">
+          Questions, partnerships, or media inquiries — reach out. (Replace placeholders with your real info.)
+        </p>
+        <div style="display:grid; gap:10px;">
+          <div><strong>Email:</strong> <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a></div>
+          <div><strong>Location:</strong> Your City, State</div>
+          <div style="color: var(--muted); font-size:14px;">
+            Nonprofit status: 501(c)(3) approved or status pending (update this line).
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer style="text-align:center">© 2025 Auto Bonds Blessings</footer>
+  <footer>
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <strong style="color: var(--text);">Auto Bonds Blessings</strong><br />
+          <span>© <span id="year"></span> • Your City, State</span>
+        </div>
+
+        <div class="social" aria-label="Social links">
+          <!-- Replace these links with your real profiles -->
+          <a href="https://facebook.com/YOURPAGE" target="_blank" rel="noopener" aria-label="Facebook">
+            <!-- simple icon (no libraries needed) -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v3H7v3h3v8h3v-8h3l1-3h-4v-3c0-.6.4-1 1-1Z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <a href="https://instagram.com/YOURPAGE" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
-</header>
-
-<main>
-    <h2>Welcome to Auto Bonds Blessings</h2>
-    <p>We provide assistance and support for those who do not qualify for traditional loans. Our mission is to help you get the support you need, without the stress of high interest or complicated approval processes.</p>
-    <a href="#" class="btn">Learn More</a>
-</main>
-
-<footer>
-    <p>&copy; 2025 Auto Bonds Blessings 501(c)(3)Non profit |
-        <a href="#">Facebook</a> |
-        <a href="#">Twitter</a> |
-        <a href="#">Instagram</a>
-    </p>
-</footer>
-
-</body>
-</html> 
-
-
-
-
