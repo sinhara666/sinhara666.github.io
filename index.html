@@ -7,6 +7,33 @@
   <meta name="description" content="Auto Bonds Blessings helps individuals whose vehicles have been impounded by providing emergency fuel and food assistance—so one setback doesn’t turn into a life-altering crisis." />
 
   <style>
+    /* Hero background image */
+.hero-main {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(243, 246, 245, 0.92),
+      rgba(243, 246, 245, 0.92)
+    ),
+    url("images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Keep hero content above the image */
+.hero-main > * {
+  position: relative;
+  z-index: 1;
+}
+
     /* =========
        THEME (change these 6 lines if you want a different vibe)
        ========= */
@@ -533,4 +560,5 @@
   </script>
 </body>
 </html>
+
 
