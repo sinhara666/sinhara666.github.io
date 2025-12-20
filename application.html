@@ -11,14 +11,14 @@
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
     .brand{display:flex; align-items:center; gap:10px; font-weight:800}.mark{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
     nav ul{list-style:none; display:flex; gap:18px; margin:0; padding:0} nav a{color:#5f6e6a; font-weight:600; padding:8px 10px; border-radius:12px; text-decoration:none} nav a:hover{background:rgba(17,24,39,.06); color:var(--text)}
-    .btn{display:inline-flex; align-items:center; justify-content:center; padding:12px 16px; border-radius:14px; font-weight:700; border:1px solid transparent; text-decoration:none}
+    .btn{display:inline-flex; align-items:center; justify-content:center; padding:12px 16px; border-radius:14px; font-weight:700; border:1px solid transparent; text-decoration:none; cursor:pointer}
     .btn-primary{background:#1f2a35;color:#fff}.btn-primary:hover{background:#0e1520}
     .btn-ghost{background:transparent;border-color:var(--border);color:var(--text)}
     main{padding:48px 0}
     .card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:26px}
-    label{display:block; font-weight:700; margin:12px 0 6px} input, textarea, select{width:100%; padding:12px; border:1px solid #d9e1de; border-radius:12px; background:#fff}
-    .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    @media (max-width:920px){.row{grid-template-columns:1fr} nav ul{display:none}}
+    .note{color:var(--muted); font-size:14.5px}
+    .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width:920px){.grid{grid-template-columns:1fr} nav ul{display:none}}
     footer{backdrop-filter: blur(6px); background:rgba(246,247,249,.8); border-top:1px solid var(--border); padding:34px 0; color:var(--muted)}
     .footer-row{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center}
   </style>
@@ -39,51 +39,24 @@
 <main class="wrap">
   <div class="card">
     <h1>Apply for Assistance</h1>
-    <p style="color:var(--muted)">Fill this short form. We’ll follow up with next steps. Replace the “Submit” action with your form service when ready.</p>
-    <form onsubmit="event.preventDefault(); alert('Form placeholder — connect Google Forms, Jotform, or your backend.');">
-      <div class="row">
-        <div>
-          <label>Full name</label>
-          <input type="text" required>
-        </div>
-        <div>
-          <label>Email</label>
-          <input type="email" required>
-        </div>
-      </div>
-      <div class="row">
-        <div>
-          <label>Phone</label>
-          <input type="tel" required>
-        </div>
-        <div>
-          <label>City & State</label>
-          <input type="text" required>
-        </div>
-      </div>
-      <div class="row">
-        <div>
-          <label>Were you impacted by a vehicle impound?</label>
-          <select required>
-            <option value="">Select…</option>
-            <option>Yes</option><option>No</option>
-          </select>
-        </div>
-        <div>
-          <label>Primary need</label>
-          <select required>
-            <option value="">Select…</option>
-            <option>Fuel support</option><option>Food assistance</option><option>Both</option>
-          </select>
-        </div>
-      </div>
-      <label>Brief description</label>
-      <textarea rows="6" placeholder="Share anything that helps us understand your situation." required></textarea>
-      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
-        <button class="btn btn-primary" type="submit">Submit Application</button>
-        <a class="btn btn-ghost" href="index.html">Back to Home</a>
-      </div>
-    </form>
+    <p class="note">
+      No account needed. We use a secure form with Google Forms so you can submit details quickly.
+      After you finish, you’ll see a confirmation and can return here.
+    </p>
+
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin:12px 0 18px">
+      <!-- Replace the URL below with your live Google Form link -->
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform" target="_blank" rel="noopener">
+        Open Application Form
+      </a>
+      <a class="btn btn-ghost" href="index.html">Back to Home</a>
+    </div>
+
+    <p class="note">
+      Tip: In Google Forms → Settings → Presentation → Confirmation message, add:
+      <em>“Thanks — you can return to our site: https://autobondsblessings.com/thank-you.html”</em>
+      (Google Forms can’t auto-redirect, but the message link works well.)
+    </p>
   </div>
 </main>
 
