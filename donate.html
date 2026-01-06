@@ -17,6 +17,8 @@
       --shadow:0 10px 30px rgba(0,0,0,.12);
       --max:900px;
     }
+    .donateFix{ position:relative; z-index:9999; pointer-events:auto; }
+
 
     *{box-sizing:border-box}
     body{
@@ -120,13 +122,14 @@
       </p>
 
       <!-- ✅ STRIPE DONATION BUTTON -->
-      <a class="donate-btn"
-         href="https://donate.stripe.com/8x25kC2St6vPggudix2wU06"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Donate to Auto Bonds Blessings">
-        ❤️ Donate
-      </a>
+    <a class="btn btn-primary donateFix"
+   href="https://donate.stripe.com/8x25kC2St6vPggudix2wU06"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Donate to Auto Bonds Blessings">
+  ❤️ Donate Once
+</a>
+
 
       <div class="secure">
         Secure payments powered by Stripe 🔒
