@@ -1,77 +1,147 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Donate | Auto Bonds Blessings</title>
+
   <style>
-    :root{--bg-tint: rgba(245,248,247,.65); --panel: rgba(255,255,255,.9); --text:#1e2a28; --muted:#5f6e6a; --accent:#6fa3a1; --accent2:#9cc3b7; --border: rgba(0,0,0,.06); --radius:18px; --shadow:0 10px 30px rgba(20,30,30,.14); --max:1100px}
-    *{box-sizing:border-box} body{margin:0; color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background: var(--bg-tint) url("image/hero-bg.jpg") center/cover fixed no-repeat}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
-    header{position:sticky; top:0; backdrop-filter: blur(10px); background: rgba(246,247,249,.75); border-bottom:1px solid var(--border)}
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800}.mark{width:34px; height:34px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent2))}
-    nav ul{list-style:none; display:flex; gap:18px; margin:0; padding:0}
-    nav a{color:#5f6e6a; font-weight:600; padding:8px 10px; border-radius:12px; text-decoration:none} nav a:hover{background:rgba(17,24,39,.06); color:var(--text)}
-    .btn{display:inline-flex; align-items:center; justify-content:center; padding:12px 16px; border-radius:14px; font-weight:700; border:1px solid transparent; text-decoration:none}
-    .btn-primary{background:#1f2a35;color:#fff}.btn-primary:hover{background:#0e1520}
-    .btn-accent{background:var(--accent); color:#fff}
-    main{padding:48px 0}
-    .card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:26px}
-    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px}
-    ul{margin:8px 0 0 18px; color:var(--muted)}
-    footer{backdrop-filter: blur(6px); background:rgba(246,247,249,.8); border-top:1px solid var(--border); padding:34px 0; color:var(--muted)}
-    .footer-row{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center}
-    @media (max-width:920px){nav ul{display:none}}
+    :root{
+      --bg:#f4f7f6;
+      --panel:#ffffff;
+      --text:#1e2a28;
+      --muted:#5f6e6a;
+      --accent:#6fa3a1;
+      --accent-dark:#4e8b88;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.12);
+      --max:900px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    header{
+      background:#fff;
+      border-bottom:1px solid #e5e7eb;
+      padding:16px 0;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 18px;
+    }
+
+    .brand{
+      font-weight:800;
+      font-size:1.2rem;
+    }
+
+    main{
+      padding:60px 0;
+    }
+
+    .card{
+      background:var(--panel);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:36px;
+      text-align:center;
+    }
+
+    h1{
+      margin-top:0;
+    }
+
+    p{
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .donate-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin-top:28px;
+      padding:18px 34px;
+      font-size:1.2rem;
+      font-weight:700;
+      color:#fff;
+      background:var(--accent);
+      border-radius:999px;
+      text-decoration:none;
+      box-shadow:0 10px 25px rgba(0,0,0,.18);
+      transition:.2s ease;
+    }
+
+    .donate-btn:hover{
+      background:var(--accent-dark);
+      transform:translateY(-1px);
+    }
+
+    .secure{
+      margin-top:18px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+
+    footer{
+      margin-top:60px;
+      padding:30px 0;
+      font-size:.9rem;
+      color:var(--muted);
+      text-align:center;
+    }
   </style>
 </head>
+
 <body>
+
 <header>
   <div class="wrap">
-    <div class="nav">
-      <div class="brand"><span class="mark"></span><span>Auto Bonds Blessings</span></div>
-      <nav><ul>
-        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="application.html">Apply</a></li><li><a href="donate.html">Donate</a></li><li><a href="contact.html">Contact</a></li>
-      </ul></nav>
-      <div><a class="btn btn-accent" href="application.html">Apply</a></div>
-    </div>
+    <div class="brand">Auto Bonds Blessings</div>
   </div>
 </header>
 
-<main class="wrap">
-  <div class="card">
-    <h1>Donate</h1>
-    <p style="color:var(--muted)">Small, timely support helps prevent job loss and housing instability after vehicle impoundment.</p>
-    <div class="grid">
-      <div class="card">
-        <h2>One-time gift</h2>
-        <p class="muted">Fast and simple.</p>
-        <a class="btn btn-primary" href="https://YOUR-DONATION-LINK" target="_blank" rel="noopener">Donate Once</a>
-      </div>
-      <div class="card">
-        <h2>Monthly support</h2>
-        <p class="muted">Keeps the mission stable.</p>
-        <a class="btn btn-accent" href="https://YOUR-MONTHLY-LINK" target="_blank" rel="noopener">Donate Monthly</a>
-      </div>
-      <div class="card">
-        <h2>Where it goes</h2>
-        <ul>
-          <li>Application support & outreach</li>
-          <li>Resource navigation</li>
-          <li>Operations & communication</li>
-        </ul>
+<main>
+  <div class="wrap">
+    <div class="card">
+      <h1>Support Our Mission</h1>
+      <p>
+        Your donation helps provide short-term assistance to individuals
+        facing job loss and housing instability after vehicle impoundment.
+      </p>
+
+      <!-- ✅ STRIPE DONATION BUTTON -->
+      <a class="donate-btn"
+         href="https://donate.stripe.com/8x25kC2St6vPggudix2wU06"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Donate to Auto Bonds Blessings">
+        ❤️ Donate
+      </a>
+
+      <div class="secure">
+        Secure payments powered by Stripe 🔒
       </div>
     </div>
   </div>
 </main>
 
 <footer>
-  <div class="wrap">
-    <div class="footer-row">
-      <div><strong style="color:var(--text)">Auto Bonds Blessings</strong><br/>© <span id="year"></span></div>
-      <div>Thank you for your support.</div>
-    </div>
-  </div>
+  © <span id="year"></span> Auto Bonds Blessings · Thank you for your support
 </footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
