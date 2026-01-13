@@ -86,6 +86,22 @@
       max-width:60ch;
     }
     .hero-actions{margin-top:22px}
+
+    /* ✅ HERO IMAGE (layout-only — no color changes) */
+    .hero-media{
+      margin-top:18px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--border);
+    }
+    .hero-media img{
+      width:100%;
+      height:auto;
+      display:block;
+      max-height:320px;
+      object-fit:cover;
+    }
+
     section{margin-top:48px}
     .grid3{
       display:grid;
@@ -102,6 +118,7 @@
     @media(max-width:900px){
       .grid,.grid3{grid-template-columns:1fr}
       nav ul{display:none}
+      .hero-media img{max-height:260px}
     }
   </style>
 </head>
@@ -131,6 +148,12 @@
       <p class="lead">
         Auto Bonds Blessings provides emergency fuel and food assistance to individuals whose vehicles were impounded — helping prevent job loss and housing instability during a critical moment.
       </p>
+
+      <!-- ✅ Add your hero image here -->
+      <div class="hero-media">
+        <img src="/images/hero.jpg" alt="Auto Bonds Blessings supporting individuals after vehicle impoundment">
+      </div>
+
       <div class="hero-actions">
         <a class="btn btn-primary" href="donate.html">Support the Mission</a>
       </div>
@@ -180,4 +203,3 @@
 
 </body>
 </html>
-
